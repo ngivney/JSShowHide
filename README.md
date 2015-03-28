@@ -1,2 +1,2 @@
 # JSShowHide
-JavaScript/CSS show/hide DIVs
+JavaScript/CSS Show/Hide DIVs
