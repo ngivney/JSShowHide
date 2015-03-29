@@ -1,0 +1,56 @@
+<html>
+<!-- check if javascript is enabled -->
+<noscript>
+<marquee style="color:white; font-size:22px;" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();" bgcolor="#2D4E93"><strong>Javascript is required to complete this form. Please enable javascript for your browser and refresh the webpage to complete form. &nbsp;&nbsp;&nbsp;</strong></marquee>
+</noscript>
+
+<script type="text/javascript">
+// Confirm user wants to abort
+window.onbeforeunload = function() { return "You work will be lost."; };
+
+// Hide and Show DIV
+function showElement(id, display){
+if(!display)
+display = 'inline';
+if(document.getElementById(id).style.display != 'none'){
+document.getElementById(id).style.display = 'none';
+return 'Next DIV';
+}
+else{
+document.getElementById(id).style.display = display;
+}
+}
+</script>
+
+<!-- Set First DIV to Display -->
+<div id="myDiv1" style="display: block; border:none;">
+<p>DIV 1 of 2</p>
+<dt>This is the first DIV and set to display:</dt>
+<br>
+<dd>
+Click on the button to show the next DIV 
+</dd>
+<br><br>
+<input name="next" id="next" value="Next DIV" onclick="this.value = showElement('myDiv2'); this.value = showElement('myDiv1')" type="button">
+</div>
+
+<!-- Hide Additional Elements -->
+<div id="myDiv2" style="display: none; border:none;">
+<p>DIV 2 of 2</p>
+<dt>This is the second DIV and was hidden until you clicked the button:</dt>
+<br>
+<dd>
+Click the button to show the first Div again and hide this one.
+</dd>
+<br><br>
+<input name="back" id="back" value="Back to First DIV" onclick="this.value = showElement('myDiv1'); this.value = showElement('myDiv2')" type="button">
+</div>
+<br><br>
+
+<!-- Reset Button -->
+<table width="100%"><tr><td align='right'>
+<form action="jsshowhide.html">
+    <input type="submit" value="Cancel/Start Over">
+</form>
+</td></tr></table>
+</html>
